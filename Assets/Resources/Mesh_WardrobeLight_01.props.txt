@@ -1,0 +1,15 @@
+Materials[3] =
+{
+    Materials[0] = Material3'유니티언팩/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/SpookEvents/SpookyLampExplosion/Mat_LightMetal.Mat_LightMetal'
+    Materials[1] = Material3'유니티언팩/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/SpookEvents/SpookyLampExplosion/MAT_LightBulb.MAT_LightBulb'
+    Materials[2] = Material3'유니티언팩/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/SpookEvents/SpookyLampExplosion/MAT_LightPlastic.MAT_LightPlastic'
+}
+SourceModels[0] = {}
+StaticMaterials[0] = {}
+Sockets[0] = {}
+ExtendedBounds =
+{
+    Origin = { X=-4.76837e-07, Y=0, Z=-26.1748 }
+    BoxExtent = { X=5.36212, Y=5.36212, Z=26.0944 }
+    SphereRadius = 26.0944
+}

@@ -1,0 +1,77 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[2] =
+{
+    ReferencedTextures[0] = Texture2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug_basecolor.mat_rug_basecolor'
+    ReferencedTextures[1] = Texture2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug_normal.mat_rug_normal'
+}
+Expressions[36] =
+{
+    Expressions[2] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_7'
+    Expressions[8] = MaterialExpressionTextureSample'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionTextureSample_0'
+    Expressions[9] = MaterialExpressionTextureSample'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionTextureSample_1'
+    Expressions[12] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_0'
+    Expressions[13] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_1'
+    Expressions[14] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_2'
+    Expressions[15] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_3'
+    Expressions[18] = MaterialExpressionTextureSampleParameter2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[20] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_4'
+    Expressions[24] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_5'
+    Expressions[25] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_6'
+    Expressions[26] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_8'
+    Expressions[28] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_9'
+    Expressions[35] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/mat_rug.MaterialExpressionScalarParameter_10'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Opaque (0)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[1] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/Meshes/Rug/6-abstract-retro-geometric-pattern-atthamee-ni.6-abstract-retro-geometric-pattern-atthamee-ni'
+        Name = pattern
+        Group = None
+    }
+}
+CollectedScalarParameters[11] =
+{
+    CollectedScalarParameters[0] = { Value=0.5, Name=spec, Group=None }
+    CollectedScalarParameters[1] = { Value=0.05, Name=hightratio, Group=None }
+    CollectedScalarParameters[2] = { Value=8, Name=min steps, Group=None }
+    CollectedScalarParameters[3] = { Value=64, Name=maxsteps, Group=None }
+    CollectedScalarParameters[4] = { Value=1, Name=hightiling, Group=None }
+    CollectedScalarParameters[5] = { Value=1, Name=diffadd, Group=None }
+    CollectedScalarParameters[6] = { Value=1, Name=normalint, Group=None }
+    CollectedScalarParameters[7] = { Value=1, Name=AOpower, Group=None }
+    CollectedScalarParameters[8] = { Value=0, Name=roughness, Group=None }
+    CollectedScalarParameters[9] = { Value=1, Name=patterntiling, Group=None }
+    CollectedScalarParameters[10] = { Value=0, Name=Desaturation, Group=None }
+}
+CollectedVectorParameters[0] = {}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

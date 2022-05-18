@@ -1,0 +1,62 @@
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[2] =
+{
+    ReferencedTextures[0] = Texture2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/height_map.height_map'
+    ReferencedTextures[1] = Texture2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/Symbols/ring_symbol.ring_symbol'
+}
+Expressions[34] =
+{
+    Expressions[8] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionScalarParameter_2'
+    Expressions[12] = MaterialExpressionTextureSample'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionTextureSample_1'
+    Expressions[16] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionScalarParameter_3'
+    Expressions[21] = MaterialExpressionScalarParameter'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionScalarParameter_0'
+    Expressions[23] = MaterialExpressionTextureSample'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionTextureSample_2'
+    Expressions[31] = MaterialExpressionTextureSampleParameter2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionTextureSampleParameter2D_0'
+    Expressions[32] = MaterialExpressionTextureSample'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/MAT_Dissolve.MaterialExpressionTextureSample_3'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+}
+BlendMode = BLEND_Masked (1)
+OpacityMaskClipValue = 0.333
+CollectedTextureParameters[1] =
+{
+    CollectedTextureParameters[0] =
+    {
+        Texture = Texture2D'À¯´ÏÆ¼¾ðÆÑ/Notes of Obsession 1.0.0.7 x32/Noo-Win32-Shipping/Content/FirstPersonBP/Blueprints/Symbols/symbol_001.symbol_001'
+        Name = SymbolTexture
+        Group = None
+    }
+}
+CollectedScalarParameters[3] =
+{
+    CollectedScalarParameters[0] = { Value=0, Name=LerpValue, Group=None }
+    CollectedScalarParameters[1] = { Value=0, Name=FadeValue, Group=None }
+    CollectedScalarParameters[2] = { Value=1, Name=VisibilityValue, Group=None }
+}
+CollectedVectorParameters[0] = {}
+FlattenedTexture = None
+MobileBaseTexture = None
+MobileNormalTexture = None
+bUseMobileSpecular = false
+MobileSpecularPower = 16
+MobileSpecularMask = MSM_Constant (0)
+MobileMaskTexture = None
+TextureStreamingData[0] = {}

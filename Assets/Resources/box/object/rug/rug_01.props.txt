@@ -1,0 +1,10 @@
+Materials[1] = {  }
+SourceModels[0] = {}
+StaticMaterials[0] = {}
+Sockets[0] = {}
+ExtendedBounds =
+{
+    Origin = { X=0, Y=0, Z=1.49996 }
+    BoxExtent = { X=150, Y=87.5, Z=1.50004 }
+    SphereRadius = 150
+}

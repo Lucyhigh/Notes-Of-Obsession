@@ -1,0 +1,5 @@
+Diffuse=mat_rug_basecolor
+Normal=mat_rug_normal
+Other[0]=bedroom_carpet_tileable
+Other[1]=T_Concrete_Panels_D
+Other[2]=kids_rug
