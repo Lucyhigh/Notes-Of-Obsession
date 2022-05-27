@@ -225,4 +225,5 @@ public class CFollowCameraChan : MonoBehaviour
         }
         else move.y = -1;
     }
+   
 }
