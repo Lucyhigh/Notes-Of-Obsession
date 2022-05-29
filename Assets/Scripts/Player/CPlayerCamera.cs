@@ -41,7 +41,6 @@ public class CPlayerCamera : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Locked;
 
-
         oTransform = transform;
         playerModel = transform.GetChild(0);
         cameraTransform = Camera.main.transform; //maincamera
@@ -72,8 +71,8 @@ public class CPlayerCamera : MonoBehaviour
         MovePlayer(1.0f);
 
         playerController.Move(move * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        //¿À¸£°ñ ÄÝ¶óÀÌ´õ¿Í ºÎµúÃÆ´Ù¸é
+        if (Input.GetKeyDown(KeyCode.E))
         {
             playerAnimator.SetTrigger("aFirst");
         }
@@ -246,16 +245,16 @@ public class CPlayerCamera : MonoBehaviour
         //}
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
-        Vector3 center = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + rayDistance); 
-        Vector3 direction = Camera.main.transform.TransformDirection(Vector3.forward) * rayDistance;
-        //Ray ray = new Ray(
-        //                center,
-        //                direction);
-        Gizmos.color = Color.red;
-        //    Gizmos.DrawRay(center, direction);
-        Gizmos.DrawSphere(center, rayDistance);
+        //Vector3 center = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + rayDistance); 
+        //Vector3 direction = Camera.main.transform.TransformDirection(Vector3.forward) * rayDistance;
+        ////Ray ray = new Ray(
+        ////                center,
+        ////                direction);
+        //Gizmos.color = Color.red;
+        ////    Gizmos.DrawRay(center, direction);
+        //Gizmos.DrawSphere(center, rayDistance);
     }
 
     #endregion
