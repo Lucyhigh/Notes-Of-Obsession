@@ -13,12 +13,6 @@ public class CPlayerCamera : MonoBehaviour
     public float runSpeed = 4.0f;
     //마우스 감도
     public float mouseSensitivity = 2.0f;
-
-    [Space(5.0f)]
-    [Header("Spherecast")]
-    public float sphereSize = 5.0f;
-    public float rayDistance = 10.0f;
-    //public float rayWidth = 5.0f;
     #endregion
 
     Transform oTransform;
@@ -31,11 +25,6 @@ public class CPlayerCamera : MonoBehaviour
 
     Vector3 move;
     Vector3 mouseMove;
-
-    private Ray ray;
-    //RayCast로 구해진 결과 정보를 담는 구조체 (hit된 정보)
-    private RaycastHit rayHit;
-    private RaycastHit[] rayHitArr;
 
     void Awake()
     {
@@ -51,31 +40,13 @@ public class CPlayerCamera : MonoBehaviour
 
     void Start()
     {
-        //for(int i = 0; i < 3; i++)
-        //{
-        //    ray[i] = new Ray[]
-        //    {
-        //        origin = this.transform.position, 
-        //        direction = this.transform.forward * rayDistance
-        //    };
-        //}
-
     }
     void Update()
     {
         // Balance();
-        //RaySample();
         CameraDistanceControll();
-
-        //ObjectChecking();
         MovePlayer(1.0f);
-
         playerController.Move(move * Time.deltaTime);
-        //오르골 콜라이더와 부딪쳤다면
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            playerAnimator.SetTrigger("aFirst");
-        }
     }
 
     #region camera 
@@ -202,60 +173,4 @@ public class CPlayerCamera : MonoBehaviour
     }
 
     #endregion
-    #region raycasts
-    void ObjectChecking()
-    {
-        Vector3 center = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + rayDistance);
-        Vector3 direction = Camera.main.transform.TransformDirection(Vector3.forward) * rayDistance;
-        Ray ray = new Ray(
-                        center,
-                        direction
-                        );
-        //if (Physics.SphereCast(ray,sphereSize,rayDistance))
-        //{
-        //    if(Input.GetKeyDown(KeyCode.Q))
-        //    {
-        //        //오르골 애니메이션 작동- 코루틴?
-        //        Debug.Log("오브젝트 체크");
-        //    }
-        //}
-
-    }
-
-    void RaySample()
-    {
-        RaycastHit hitInfo;
-        if(Physics.Raycast(
-            new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + rayDistance),
-            cameraParentTransform.forward,
-            out hitInfo,
-            rayDistance))
-        {
-            Debug.LogFormat("레이맞음 hitInfo {0}",hitInfo.transform.gameObject.tag);
-        }
-
-        //태그 검출
-        //tag : 게임 오브젝트를 분류하는 방법 중 하나
-        //for (int i = 0; i < rayHitArr.Length; i++)
-        //{
-        //    if (rayHitArr[i].collider.gameObject.CompareTag("MusicBox"))//나중에 좀 나누기 - 심볼,문,오르골 등
-        //    {
-        //        Debug.Log(rayHitArr[i].collider.gameObject.name + " 감지");
-        //    }
-        //}
-    }
-
-    void OnDrawGizmos()
-    {
-        //Vector3 center = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + rayDistance); 
-        //Vector3 direction = Camera.main.transform.TransformDirection(Vector3.forward) * rayDistance;
-        ////Ray ray = new Ray(
-        ////                center,
-        ////                direction);
-        //Gizmos.color = Color.red;
-        ////    Gizmos.DrawRay(center, direction);
-        //Gizmos.DrawSphere(center, rayDistance);
-    }
-
-    #endregion
-}//텍스트 생성은 일정 구간만큼 들어올시에 작동
+}
