@@ -8,7 +8,7 @@ public class CPlayerCamera : MonoBehaviour
 {
     #region 변수
     public float cameraDistance = 2.5f;
-    public float cameraHeight = 1.0f;
+    public float cameraHeight = 0.3f;
     //달리기 속도
     public float runSpeed = 4.0f;
     //마우스 감도
@@ -44,7 +44,6 @@ public class CPlayerCamera : MonoBehaviour
     void Update()
     {
         // Balance();
-        CameraDistanceControll();
         MovePlayer(1.0f);
         playerController.Move(move * Time.deltaTime);
     }
@@ -53,7 +52,7 @@ public class CPlayerCamera : MonoBehaviour
     void LateUpdate()
     {
         //대상의 높이
-        cameraParentTransform.position = oTransform.position + Vector3.up * 0.7f;
+        cameraParentTransform.position = oTransform.position + Vector3.up * cameraHeight;
 
         //마우스 움직임 회전이라 축회전기준으로 x,y의 위치가 달라짐
         mouseMove += new Vector3(-Input.GetAxisRaw("Mouse Y") * mouseSensitivity,
@@ -69,31 +68,6 @@ public class CPlayerCamera : MonoBehaviour
         else if (60 < mouseMove.y) mouseMove.y = 60;
 
         cameraParentTransform.localEulerAngles = mouseMove;
-    }
-
-    void CameraDistanceControll()
-    {
-        Camera.main.transform.localPosition += new Vector3(0, 0, Input.GetAxisRaw("Mouse ScrollWheel") * 2.0f);
-        //최대 확대
-        if (-2 < Camera.main.transform.localPosition.z)
-        {
-            Camera.main.transform.localPosition = new Vector3
-                (
-                    Camera.main.transform.localPosition.x,
-                    Camera.main.transform.localPosition.y,
-                    -2
-                );
-        }
-        //최대 축소
-        else if (Camera.main.transform.localPosition.z < -5)
-        {
-            Camera.main.transform.localPosition = new Vector3
-           (
-                Camera.main.transform.localPosition.x,
-                Camera.main.transform.localPosition.y,
-                -5
-           );
-        }
     }
 
     void MovePlayer(float rate)
@@ -153,7 +127,7 @@ public class CPlayerCamera : MonoBehaviour
                         (
                         playerModel.rotation,
                         characterRotation,
-                        10.0f * Time.deltaTime
+                        20.0f * Time.deltaTime
                         );
             }
             //MoveTowards : 관성(서서히 이동할때 사용 -> 일정한 속도로 이동)
@@ -171,6 +145,5 @@ public class CPlayerCamera : MonoBehaviour
         // y값 복구(메모리 절약중...메모리는 소중하니까)
         move.y = tempMoveY;
     }
-
     #endregion
 }

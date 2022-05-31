@@ -15,13 +15,16 @@ public class CRayExample : MonoBehaviour
     //RayCast로 구해진 결과 정보를 담는 구조체 (hit된 정보)
     private RaycastHit rayHit;
     private RaycastHit[] rayHitArr;
+    private GameObject tableMusicBox;
+
+    public Transform rayPosition;
 
     void Start()
     {
         ray = new Ray
         {
-            origin = this.transform.position,
-            direction = this.transform.forward
+            origin = rayPosition.position,
+            direction = rayPosition.forward
         };
     }
 
@@ -29,8 +32,10 @@ public class CRayExample : MonoBehaviour
     {
         RayCastTag();
 
-        ray.origin = this.transform.position;
-        ray.direction = this.transform.forward;
+        ray.origin = rayPosition.position;
+        ray.direction = rayPosition.forward;
+        //다이렉션은 포워드라면 마우스이동에 따른 rotation양을 카메라에서 받아야하는데
+        //
        
     }
 
@@ -43,7 +48,8 @@ public class CRayExample : MonoBehaviour
             if (rayHitArr[i].collider.gameObject.CompareTag("MusicBox"))
             {
                 Debug.Log(rayHitArr[i].collider.gameObject.tag + " 감지");
-
+                tableMusicBox = rayHitArr[i].collider.gameObject;
+                tableMusicBox.GetComponent<interact>().Play();
             }
         }
     }

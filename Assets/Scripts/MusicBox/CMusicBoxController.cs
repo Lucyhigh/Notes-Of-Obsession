@@ -7,10 +7,10 @@ public class CMusicBoxController : MonoBehaviour
     #region
 
     #endregion
-    
+
+    Animator musicBoxColltroller;
     void Start()
     {
-
     }
 
     void Update()

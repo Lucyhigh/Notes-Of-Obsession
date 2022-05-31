@@ -1,8 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
-public class CTableMusicBoxInteract : MonoBehaviour
+interface interact
+{
+     void Play();
+}
+
+public class CTableMusicBoxInteract : MonoBehaviour, interact
 {
     #region
     [Header("Interact GameObject")]
@@ -11,17 +17,18 @@ public class CTableMusicBoxInteract : MonoBehaviour
     public GameObject player = null;
     #endregion
 
-    public void setIsNearMusicBox(bool state)
-    {
-        isNear = state;
-    }
+    GameObject musicBoxSound;
+    Animator playerMusicBoxAnimator;
+    Animator playerAnimator;
 
-    private GameObject musicBoxSound;
-    private static bool isNear = false;
+    private bool isNear = false;
 
-    void Start()
+    void Awake()
     {
-        
+        musicBoxSound = transform.GetChild(2).gameObject;
+        playerMusicBoxAnimator = playerMusicBoxObject.GetComponent<Animator>();
+        playerAnimator = player.GetComponent<Animator>();
+
     }
 
     void Update()
@@ -29,30 +36,31 @@ public class CTableMusicBoxInteract : MonoBehaviour
         if (isNear)
         {
             textUI.SetActive(true);
+            //애니메이션 맞추기 용으로 잠시 제거
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
+                playerMusicBoxAnimator.SetTrigger("aFirst");
+                playerAnimator.SetTrigger("aFirst");
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //아니면 오르골을 캐릭터 자식으로 받고있다가 setActive 켜주기?
-                playerMusicBoxObject.SetActive(true);
+                //musicBoxSound.GetComponent<StudioEventEmitter>().Play();
 
-                //사운드 재생 및 애니메이션 작동
-                GetComponent<FMODUnity.StudioEventEmitter>().Play();
-
-                Destroy(this.gameObject);
-
-                isNear = false;
-
-
-                //textUI.SetActive(false);
-                //rayHitArr[i].collider.gameObject.SetActive(false);
-                //GetComponent<FMODUnity.StudioEventEmitter>().Play();
-
-                //playerMusicBoxObject.GetComponent<Animator>().SetTrigger("aFirst");
-            }
+                //isNear = false;
+               // Destroy(this.gameObject);
+            //}
         }
         else
         {
             textUI.SetActive(false);
         }
+    }
+
+    public void openMusicBox()
+    {
+        isNear = true;
+    }
+
+    public void Play()
+    {
+        openMusicBox();
     }
 }
