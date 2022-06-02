@@ -47,9 +47,10 @@ public class CRayExample : MonoBehaviour
         {
             if (rayHitArr[i].collider.gameObject.CompareTag("MusicBox"))
             {
-                Debug.Log(rayHitArr[i].collider.gameObject.tag + " 감지");
                 tableMusicBox = rayHitArr[i].collider.gameObject;
-                tableMusicBox.GetComponent<interact>().Play();
+                rayHitArr[i].collider.gameObject.SendMessage("openMusicBox", SendMessageOptions.DontRequireReceiver);
+                Debug.Log(rayHitArr[i].collider.gameObject.tag + " 감지");
+
             }
         }
     }

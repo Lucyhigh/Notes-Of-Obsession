@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-interface interact
-{
-     void Play();
-}
 
-public class CTableMusicBoxInteract : MonoBehaviour, interact
+
+public class CTableMusicBoxInteract : MonoBehaviour
 {
     #region
     [Header("Interact GameObject")]
     public GameObject textUI = null;
     public GameObject playerMusicBoxObject = null;
     public GameObject player = null;
+
+    [Space(3.0f)]
+    [Header("Sound")]
     #endregion
 
-    GameObject musicBoxSound;
+    StudioEventEmitter musicBoxSound;
+    //GameObject musicBoxSound;
     Animator playerMusicBoxAnimator;
     Animator playerAnimator;
+
+
 
     private bool isNear = false;
 
     void Awake()
     {
-        musicBoxSound = transform.GetChild(2).gameObject;
+        //musicBoxSound = transform.GetChild(2).gameObject;
         playerMusicBoxAnimator = playerMusicBoxObject.GetComponent<Animator>();
         playerAnimator = player.GetComponent<Animator>();
+        musicBoxSound = GetComponent<StudioEventEmitter>();
 
     }
 
@@ -39,13 +43,13 @@ public class CTableMusicBoxInteract : MonoBehaviour, interact
             //애니메이션 맞추기 용으로 잠시 제거
             //if (Input.GetKeyDown(KeyCode.E))
             //{
-                playerMusicBoxAnimator.SetTrigger("aFirst");
-                playerAnimator.SetTrigger("aFirst");
+            playerMusicBoxAnimator.SetTrigger("aFirst");
+            playerAnimator.SetTrigger("aFirst");
 
-                //musicBoxSound.GetComponent<StudioEventEmitter>().Play();
+            Play();
 
-                //isNear = false;
-               // Destroy(this.gameObject);
+            //isNear = false;
+            // Destroy(this.gameObject);
             //}
         }
         else
@@ -53,7 +57,6 @@ public class CTableMusicBoxInteract : MonoBehaviour, interact
             textUI.SetActive(false);
         }
     }
-
     public void openMusicBox()
     {
         isNear = true;
@@ -61,6 +64,9 @@ public class CTableMusicBoxInteract : MonoBehaviour, interact
 
     public void Play()
     {
-        openMusicBox();
+        //musicBoxSound.Event = "snapshot:/Snapshot3";
+        Debug.Log("노래");
+
+        musicBoxSound.Play();
     }
 }
