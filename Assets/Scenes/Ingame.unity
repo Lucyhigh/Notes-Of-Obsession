@@ -566,7 +566,6 @@ GameObject:
   - component: {fileID: 18571725}
   - component: {fileID: 18571726}
   - component: {fileID: 18571727}
-  - component: {fileID: 18571729}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -582,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18571723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.4, y: 5.7, z: -14.33}
+  m_LocalPosition: {x: -3.92, y: 5.7, z: -14.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -623,8 +622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7235ba89a5922b4d8b3bd16fc80dfb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraDistance: 2
-  cameraHeight: 1
+  cameraDistance: 0.05
+  cameraHeight: -0.3
   runSpeed: 4
   mouseSensitivity: 2
 --- !u!114 &18571727
@@ -636,37 +635,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 18571723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1796833845
-      Data2: 1177371475
-      Data3: 459961256
-      Data4: -799556364
-    Path: event:/Ljud/Fail_State/Fail_State_Scream
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!114 &18571729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18571723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952e01fdfa7c35f44a8802204ca0c7b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8580a8d1cb99ec24497b762950c37f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &21211581
@@ -14117,7 +14086,7 @@ RectTransform:
   m_Children:
   - {fileID: 704974613}
   m_Father: {fileID: 2063920723}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15918,7 +15887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &759845782
 Transform:
   m_ObjectHideFlags: 0
@@ -28594,68 +28563,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 536906734749703294, guid: 80a9c754464e02a47be80ddad8c4c6ba, type: 3}
   m_PrefabInstance: {fileID: 1507621258}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1508338462
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1508338464}
-  - component: {fileID: 1508338463}
-  m_Layer: 0
-  m_Name: FMOD_MusicBoxFirst
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1508338463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508338462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -449463651
-      Data2: 1114333188
-      Data3: 1114763176
-      Data4: 668781032
-    Path: event:/Musik/Credits
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
---- !u!4 &1508338464
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508338462}
-  m_LocalRotation: {x: 0, y: -0.99999106, z: -0, w: -0.004230571}
-  m_LocalPosition: {x: -0.2223065, y: 0.23187733, z: 0.54563445}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2063920723}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1509342045
 GameObject:
   m_ObjectHideFlags: 0
@@ -40235,7 +40142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c20bbfd82b68f54b83e22e17b6cccdd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c20bbfd82b68f54b83e22e17b6cccdd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41244,6 +41151,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &2063920726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063920718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2135759854
+      Data2: 1328822857
+      Data3: 1987047555
+      Data4: 1015332761
+    Path: event:/Musik/Stingers
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &2063920727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063920718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952e01fdfa7c35f44a8802204ca0c7b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2066096909
 PrefabInstance:
   m_ObjectHideFlags: 0

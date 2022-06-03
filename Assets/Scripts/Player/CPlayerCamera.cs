@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
 public class CPlayerCamera : MonoBehaviour
 {
     #region 변수
     public float cameraDistance = 2.5f;
-    public float cameraHeight = 0.3f;
+    public float cameraHeight = 0.1f;
     //달리기 속도
     public float runSpeed = 4.0f;
     //마우스 감도
@@ -19,7 +18,6 @@ public class CPlayerCamera : MonoBehaviour
     Transform playerModel;
     Transform cameraTransform;
     Transform cameraParentTransform;
-         
     CharacterController playerController;
     Animator playerAnimator;
 
@@ -41,6 +39,7 @@ public class CPlayerCamera : MonoBehaviour
     void Start()
     {
     }
+
     void Update()
     {
         // Balance();
@@ -52,20 +51,16 @@ public class CPlayerCamera : MonoBehaviour
     void LateUpdate()
     {
         //대상의 높이
-        cameraParentTransform.position = oTransform.position + Vector3.up * cameraHeight;
+        cameraParentTransform.position = oTransform.position + Vector3.up * cameraHeight + Vector3.forward * cameraDistance;
 
         //마우스 움직임 회전이라 축회전기준으로 x,y의 위치가 달라짐
         mouseMove += new Vector3(-Input.GetAxisRaw("Mouse Y") * mouseSensitivity,
                                   Input.GetAxisRaw("Mouse X") * mouseSensitivity,
                                   0
                                   );
-        //높이 제한 / 슈팅게임의 경우는 >> 90도 가까이 맞춰라
         //테스트 필요
-        if (mouseMove.x < -20) mouseMove.x = -20;
-        else if (45 < mouseMove.x) mouseMove.x = 45;
-
-        if (mouseMove.y < -60) mouseMove.y = -60;
-        else if (60 < mouseMove.y) mouseMove.y = 60;
+        if (mouseMove.x < -60) mouseMove.x = -60;
+        else if (85 < mouseMove.x) mouseMove.x = 85;
 
         cameraParentTransform.localEulerAngles = mouseMove;
     }

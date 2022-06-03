@@ -10,7 +10,7 @@ public class CTableMusicBoxInteract : MonoBehaviour
     #region
     [Header("Interact GameObject")]
     public GameObject textUI = null;
-    public GameObject playerMusicBoxObject = null;
+    public GameObject musicBoxObject = null;
     public GameObject player = null;
 
     [Space(3.0f)]
@@ -18,8 +18,7 @@ public class CTableMusicBoxInteract : MonoBehaviour
     #endregion
 
     StudioEventEmitter musicBoxSound;
-    //GameObject musicBoxSound;
-    Animator playerMusicBoxAnimator;
+    Animator musicBoxAnimator;
     Animator playerAnimator;
 
 
@@ -28,8 +27,7 @@ public class CTableMusicBoxInteract : MonoBehaviour
 
     void Awake()
     {
-        //musicBoxSound = transform.GetChild(2).gameObject;
-        playerMusicBoxAnimator = playerMusicBoxObject.GetComponent<Animator>();
+        musicBoxAnimator = musicBoxObject.GetComponent<Animator>();
         playerAnimator = player.GetComponent<Animator>();
         musicBoxSound = GetComponent<StudioEventEmitter>();
 
@@ -40,17 +38,16 @@ public class CTableMusicBoxInteract : MonoBehaviour
         if (isNear)
         {
             textUI.SetActive(true);
-            //애니메이션 맞추기 용으로 잠시 제거
-            //if (Input.GetKeyDown(KeyCode.E))
-            //{
-            playerMusicBoxAnimator.SetTrigger("aFirst");
-            playerAnimator.SetTrigger("aFirst");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                musicBoxAnimator.SetTrigger("aFirst");
+                playerAnimator.SetTrigger("aFirst");
 
-            Play();
+                SoundPlay();
 
-            //isNear = false;
-            // Destroy(this.gameObject);
-            //}
+                isNear = false;
+                Destroy(this.gameObject);
+            }
         }
         else
         {
@@ -62,7 +59,7 @@ public class CTableMusicBoxInteract : MonoBehaviour
         isNear = true;
     }
 
-    public void Play()
+    public void SoundPlay()
     {
         //musicBoxSound.Event = "snapshot:/Snapshot3";
         Debug.Log("노래");
