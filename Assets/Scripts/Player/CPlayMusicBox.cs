@@ -21,13 +21,18 @@ public class CPlayMusicBox : MonoBehaviour
     Animator playerAnimator;
     Animator musicBoxAnimator;
 
-    private CEventDispatcher oEventDispatcher = null;
+    private CEventDispatcher<string> oEventDispatcher = null;
 
     //이제 여기서 제네릭 붙이고 확장메서드 만들어서 쓰면 편하게 쓸 수 있다~
     private void Awake()
     {
-        oEventDispatcher = new CEventDispatcher();
+        oEventDispatcher = new CEventDispatcher<string>();
         oEventDispatcher.m_oEventHandler += PrintString;
+
+        var a = new CEventDispatcher<string>.A();
+        oEventDispatcher.Example(a);
+        var b = new CEventDispatcher<string>.B();
+        oEventDispatcher.Example(b);//상속관계인 B가 찍힘
     }
 
     void Start()
@@ -60,7 +65,13 @@ public class CPlayMusicBox : MonoBehaviour
 
     }
 
-    public class CEventDispatcher
+    //public class CEventDispatcher 으로 쓰고 함수제네릭 사용가능
+    //클래식 제네릭
+    public class CEventDispatcher<T> 
+    //public class CEventDispatcher<T> where T : class
+        //string 은 클래스니까 string 대신 class로 T 형태 제한
+        //int float 등은 struct
+
     //속성 값이 변경되면 이벤트를 발생하고 처리한다.
     {
         //이벤트를 쓰려면 울타리(클래스)와 엄마 아빠가 필요하다
@@ -76,7 +87,8 @@ public class CPlayMusicBox : MonoBehaviour
         public event EventHandler m_oEventHandler = null;
         //public event EventHandler m_oEventHandler = null;
         //event 키워드를 통해서 선언하고 이벤트 대리자를 지정하면 된다.
-        public delegate void EventHandler(string a_oString);
+       // public delegate void EventHandler(T a_oString);
+        public delegate void EventHandler(T a_oString);
         //ㄴ 위에는 지정 안한 상태면 빨간줄뜸
 
         //초기화
@@ -85,8 +97,26 @@ public class CPlayMusicBox : MonoBehaviour
             m_oEventHandler = null;
         }
 
+        public class A
+        {
+            public int i;
+            public virtual void Print() { Debug.Log("A"); }
+        }
+        public class B : A {
+            public override void Print() { Debug.Log("B"); }
+        }
+        public class C : A {
+            public override void Print() { Debug.Log("C"); }
+        }
+
+        //함수 제네릭
+        public void Example<K>(K param) where K : A 
+        {
+            param.Print();
+        }
+
         //이벤트를 호출한다.
-        public void DispatchEvent(string a_oEvent)
+        public void DispatchEvent(T a_oEvent)
         {
             //null 체크
             //null 조건 연산자를 사용하여 스레드로부터 안전한 방식으로 대리자를 호출한다.
@@ -94,7 +124,29 @@ public class CPlayMusicBox : MonoBehaviour
             m_oEventHandler?.Invoke(a_oEvent);
         }
     }
+    /*
+     public class CArrayList<T> where T : struct
+    {
+        private T[] m_oValue = null;
 
+        //생성자
+        public CArrayList(int a_nSizw)
+        {
+            m_oValue = new T[a_nSizw];
+        }
+
+        public T this[int a_nIndex]
+        {
+            get
+            {
+                return m_oValue[a_nIndex];
+            }set
+            {
+                m_oValue[a_nIndex] = value;
+            }
+        }
+    }
+     */
 
 
     private void PrintString(string a_oString)
